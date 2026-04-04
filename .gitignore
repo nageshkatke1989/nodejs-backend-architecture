@@ -1,0 +1,44 @@
+# --- Dependencies ---
+node_modules/
+venv/
+.venv/
+env/
+bin/
+obj/
+
+# --- Environment & Secrets ---
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+
+# --- Build Outputs ---
+/generated/prisma
+dist/
+build/
+out/
+target/
+*.exe
+*.dll
+*.so
+
+# --- OS Metadata ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- IDE Configs ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-project
+
+# --- Logs & Temps ---
+*.log
+npm-debug.log*
+yarn-debug.log*
+tmp/
+temp/
+.cache/

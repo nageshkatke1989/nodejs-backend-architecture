@@ -1,5 +1,6 @@
 import express from "express";
 import { Request, Response } from "express";
+import apiGateway from "./shared/apiGateway/http/user/routes";
 
 const app = express();
 

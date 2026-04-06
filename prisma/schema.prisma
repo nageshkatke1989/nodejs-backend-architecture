@@ -12,8 +12,9 @@ generator client {
 }
 
 model User {
-  id    Int     @id @default(autoincrement())
-  email String  @unique
-  name  String
-  phone String  @unique
+  id      Int     @id @default(autoincrement())
+  email   String  @unique
+  name    String
+  mobile  BigInt  @unique
+  createdAt DateTime @default(now())
 }

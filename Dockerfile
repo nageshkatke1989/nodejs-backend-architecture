@@ -7,6 +7,12 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install
 
+# 🔥 COPY ONLY PRISMA FIRST
+COPY prisma ./prisma
+
+# 🔥 GENERATE CLIENT HERE
+RUN npx prisma generate
+
 # Copy the rest of the files
 COPY . .
 

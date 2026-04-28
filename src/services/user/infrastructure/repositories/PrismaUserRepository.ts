@@ -9,8 +9,8 @@ export class PrismaUserRepository implements UserRepository {
             data: {
                 email: user.email,
                 password: user.password,
+                name: user.name,
                 mobile: user.mobile,
-                name: user.name
             }
         });
         return new User(created.email, created.password, created.name, created.mobile, created.id);
@@ -23,7 +23,7 @@ export class PrismaUserRepository implements UserRepository {
         return new User(user.email, user.password, user.name, user.mobile, user.id);
     }
 
-    async findByMobile(mobile: number) {
+    async findByMobile(mobile: string) {
         const user = await prisma.user.findUnique({ where: { mobile } });
         if (!user) return null;
 

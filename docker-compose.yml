@@ -1,6 +1,13 @@
 services:
   api:
     build: .
+    develop:
+      watch:
+        - path: ./src
+          action: sync
+          target: /app/src
+        - path: ./package.json
+          action: rebuild
     container_name: express_app
     ports:
       - "3000:3000"
@@ -10,8 +17,8 @@ services:
       - postgres
       - mongo
     volumes:
-      - .:/app
-      - /app/node_modules
+      - ./src:/app/src          # ✅ only mount source code, not node_modules
+      - ./prisma:/app/prisma    # ✅ mount prisma schema for migrations
 
   postgres:
     image: postgres:17

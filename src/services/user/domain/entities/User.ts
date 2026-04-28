@@ -3,8 +3,8 @@ export class User{
         public email: string,
         public password: string,
         public name: string,
-        public mobile: number,
-        public id?: string
+        public mobile: string,
+        public id?: number
     ) {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if(!emailRegex.test(email)) {
